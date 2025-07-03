@@ -36,14 +36,23 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
-  
-  sort_array(test, SIZE);
 
   /* Statistics and Printing Functions Go Here */
+  print_statistics(test, SIZE);
 
 }
 
 /* Add other Implementation File Code Here */
+void print_statistics(unsigned char * ptr, int n) {
+	sort_array(ptr, n);
+	printf("median: %f\n", find_median(ptr, n));
+	printf("mean: %f\n", find_mean(ptr,n));
+	printf("max: %d\n", find_maximum(ptr,n));
+	printf("min: %d\n", find_minimum(ptr,n));
+	print_array(ptr,n);
+
+}
+
 void sort_array(unsigned char * ptr, int n) {
 	int i;
 	for (i = 0; i < n; i++) {
@@ -57,7 +66,19 @@ void sort_array(unsigned char * ptr, int n) {
 	}
 }	
 
-unsigned char find_minimum(unsigned char * ptr, int n) {
+void print_array(const unsigned char * ptr, int n) {
+	int i = 0;
+	while (i < n) {
+		printf("%d ", ptr[i]);
+		i++;
+	}
+	printf("\n");
+}
+
+
+
+
+unsigned char find_minimum(const unsigned char * ptr, int n) {
 	unsigned char min = ptr[0];
 
 	int i = 1;
@@ -71,7 +92,7 @@ unsigned char find_minimum(unsigned char * ptr, int n) {
 	return min;
 }
 
-unsigned char find_maximum(unsigned char * ptr, int n) {
+unsigned char find_maximum(const unsigned char * ptr, int n) {
 	unsigned char max = ptr[0];
 
 	int i = 1;
@@ -85,15 +106,15 @@ unsigned char find_maximum(unsigned char * ptr, int n) {
 }
 
 
-double find_mean(unsigned char * ptr, int n) {
-	double sum = 0;
+double find_mean(const unsigned char * ptr, int n) {
+	unsigned int sum = 0;
 	int i = 0;
 	while (i < n) {
 		sum += ptr[i];
 		i++;
 	}
 
-	return sum / (double) n;
+	return (double) sum / n;
 }
 
 double find_median(unsigned char * ptr, int n) {

@@ -81,7 +81,7 @@ double find_median(unsigned char * ptr, int n);
  * Return:
  * 	mean of the aray 
 **************************************************/
-double find_mean(unsigned char * ptr, int n);
+double find_mean(const unsigned char * ptr, int n);
 
 
 
@@ -97,7 +97,7 @@ double find_mean(unsigned char * ptr, int n);
  * Return:
  * 	maximum value of an item in the array
 **************************************************/
-unsigned char find_maxium(unsigned char * ptr, int n);
+unsigned char find_maximum(const unsigned char * ptr, int n);
 
 
 
@@ -113,7 +113,7 @@ unsigned char find_maxium(unsigned char * ptr, int n);
  * Return:
  * 	minimum value of an item in the array
 **************************************************/
-unsigned char find_minimum(unsigned char * ptr, int n);
+unsigned char find_minimum(const unsigned char * ptr, int n);
 
 
 /**************************************************
@@ -129,6 +129,21 @@ unsigned char find_minimum(unsigned char * ptr, int n);
  * 	None
 **************************************************/
 void sort_array(unsigned char * ptr, int n);
+
+
+/**************************************************
+ * Function: print_array
+ * Description:
+ * 	This function takes an array of adat and a length.
+ * 	print the array.
+ * 	
+ * Parameters:
+ * 	unsigned char * ptr: Pointer to the array
+ * 	int n: length of the array
+ * Return:
+ * 	None
+**************************************************/
+void print_array(const unsigned char * ptr, int n);
 
 #endif /* __STATS_H__ */
 
