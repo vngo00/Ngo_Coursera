@@ -113,7 +113,7 @@ unsigned char find_maxium(unsigned char * ptr, int n);
  * Return:
  * 	minimum value of an item in the array
 **************************************************/
-unsigned char find_minium(unsigned char * ptr, int n);
+unsigned char find_minimum(unsigned char * ptr, int n);
 
 
 /**************************************************

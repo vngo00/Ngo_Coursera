@@ -36,8 +36,71 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+  
+  sort_array(test, SIZE);
+
   /* Statistics and Printing Functions Go Here */
 
 }
 
 /* Add other Implementation File Code Here */
+void sort_array(unsigned char * ptr, int n) {
+	int i;
+	for (i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (ptr[j] < ptr[i]) {
+				unsigned char temp = ptr[i];
+				ptr[i] = ptr[j];
+			        ptr[j] = temp;
+			}
+		} 
+	}
+}	
+
+unsigned char find_minimum(unsigned char * ptr, int n) {
+	unsigned char min = ptr[0];
+
+	int i = 1;
+	
+	while (i < n) {
+		if (min > ptr[i]) {
+			min = ptr[i];
+		}
+		i++;
+	}
+	return min;
+}
+
+unsigned char find_maximum(unsigned char * ptr, int n) {
+	unsigned char max = ptr[0];
+
+	int i = 1;
+	while ( i < n) {
+		if ( max < ptr[i] ) {
+			max = ptr[i];
+		}
+		i++;
+	}
+	return max;
+}
+
+
+double find_mean(unsigned char * ptr, int n) {
+	double sum = 0;
+	int i = 0;
+	while (i < n) {
+		sum += ptr[i];
+		i++;
+	}
+
+	return sum / (double) n;
+}
+
+double find_median(unsigned char * ptr, int n) {
+	sort_array(ptr, n);
+
+	if (!(n % 2)) {
+		return (double) (ptr[n/ 2 -1] + ptr[n / 2]) / (double) 2;
+	}
+	return (double) ptr[n/2];
+}
