@@ -1,5 +1,5 @@
 /*************************************
-* Copyright (C) 2025 by Vinh Ngo - Self-study
+* Copyright (C) 2025 by Vinh Ngo - In the Beninging
 
 **************************************/
 
